@@ -26,17 +26,51 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelJudulMain = new javax.swing.JLabel();
+        jLabelSub = new javax.swing.JLabel();
+        jButtonPlayer = new javax.swing.JButton();
+        jButtonAdmin = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabelJudulMain.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelJudulMain.setText("Kata Keyboard");
+
+        jLabelSub.setText("Hari ini kamu jadi apa?");
+
+        jButtonPlayer.setText("Player");
+
+        jButtonAdmin.setText("Admin");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelSub)
+                    .addComponent(jLabelJudulMain))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(jButtonPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(jButtonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabelJudulMain)
+                .addGap(64, 64, 64)
+                .addComponent(jLabelSub)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonPlayer)
+                    .addComponent(jButtonAdmin))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +112,9 @@ public class MainView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAdmin;
+    private javax.swing.JButton jButtonPlayer;
+    private javax.swing.JLabel jLabelJudulMain;
+    private javax.swing.JLabel jLabelSub;
     // End of variables declaration//GEN-END:variables
 }
