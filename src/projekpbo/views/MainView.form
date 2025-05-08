@@ -75,11 +75,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Player"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonPlayerActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonAdmin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Admin"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAdminActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

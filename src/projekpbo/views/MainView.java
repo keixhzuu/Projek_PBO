@@ -39,8 +39,18 @@ public class MainView extends javax.swing.JFrame {
         jLabelSub.setText("Hari ini kamu jadi apa?");
 
         jButtonPlayer.setText("Player");
+        jButtonPlayer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlayerActionPerformed(evt);
+            }
+        });
 
         jButtonAdmin.setText("Admin");
+        jButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAdminActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,6 +85,18 @@ public class MainView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayerActionPerformed
+        PlayerView playerView = new PlayerView();
+        playerView.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonPlayerActionPerformed
+
+    private void jButtonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdminActionPerformed
+        AdminLoginView loginView = new AdminLoginView();
+        loginView.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonAdminActionPerformed
 
     /**
      * @param args the command line arguments

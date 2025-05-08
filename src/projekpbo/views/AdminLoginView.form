@@ -30,9 +30,9 @@
                   <Component id="jLabelPass" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldUser" alignment="0" max="32767" attributes="0"/>
                   <Component id="jPasswordField" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButtonKembali" min="-2" pref="121" max="-2" attributes="0"/>
-                      <EmptySpace pref="64" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jButtonKembali" min="-2" pref="122" max="-2" attributes="0"/>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
                       <Component id="jButtonLogin" min="-2" pref="121" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -95,11 +95,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Kembali"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonKembaliActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonLogin">
       <Properties>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLoginActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

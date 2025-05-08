@@ -4,6 +4,9 @@
  */
 package projekpbo.views;
 
+import javax.swing.JTable;
+import projekpbo.controllers.AdminController;
+
 /**
  *
  * @author Lenovo
@@ -13,8 +16,10 @@ public class AdminPanelView extends javax.swing.JFrame {
     /**
      * Creates new form AdminPanelView
      */
-    public AdminPanelView() {
+    AdminController c;
+    public AdminPanelView(AdminController c) {
         initComponents();
+        this.c = c;
     }
 
     /**
@@ -28,7 +33,7 @@ public class AdminPanelView extends javax.swing.JFrame {
 
         jLabelJudulAdm = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTabelKata = new javax.swing.JTable();
+        jTableKata = new javax.swing.JTable();
         jButtonTambahkan = new javax.swing.JButton();
         jLabelKata = new javax.swing.JLabel();
         jTextFieldKata = new javax.swing.JTextField();
@@ -41,7 +46,7 @@ public class AdminPanelView extends javax.swing.JFrame {
         jLabelJudulAdm.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelJudulAdm.setText("Daftar Kata");
 
-        jTabelKata.setModel(new javax.swing.table.DefaultTableModel(
+        jTableKata.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -52,7 +57,7 @@ public class AdminPanelView extends javax.swing.JFrame {
                 "ID", "Kata"
             }
         ));
-        jScrollPane1.setViewportView(jTabelKata);
+        jScrollPane1.setViewportView(jTableKata);
 
         jButtonTambahkan.setText("Tambahkan");
         jButtonTambahkan.addActionListener(new java.awt.event.ActionListener() {
@@ -131,36 +136,8 @@ public class AdminPanelView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminPanelView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminPanelView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminPanelView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AdminPanelView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AdminPanelView().setVisible(true);
-            }
-        });
+     public JTable getjTableKata() {
+        return jTableKata;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -171,7 +148,7 @@ public class AdminPanelView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelJudulAdm;
     private javax.swing.JLabel jLabelKata;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTabelKata;
+    private javax.swing.JTable jTableKata;
     private javax.swing.JTextField jTextFieldKata;
     // End of variables declaration//GEN-END:variables
 }

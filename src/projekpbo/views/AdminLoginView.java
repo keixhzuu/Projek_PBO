@@ -4,6 +4,9 @@
  */
 package projekpbo.views;
 
+import javax.swing.*;
+import projekpbo.controllers.AdminController;
+
 /**
  *
  * @author Lenovo
@@ -49,8 +52,18 @@ public class AdminLoginView extends javax.swing.JFrame {
         });
 
         jButtonKembali.setText("Kembali");
+        jButtonKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonKembaliActionPerformed(evt);
+            }
+        });
 
         jButtonLogin.setText("Login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,9 +76,9 @@ public class AdminLoginView extends javax.swing.JFrame {
                     .addComponent(jLabelPass)
                     .addComponent(jTextFieldUser)
                     .addComponent(jPasswordField)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addComponent(jButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(47, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -99,6 +112,27 @@ public class AdminLoginView extends javax.swing.JFrame {
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordFieldActionPerformed
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+        String username = jTextFieldUser.getText();
+        String password = new String(jPasswordField.getPassword());
+        
+        //cek login
+        if(username.equals("admin") && password.equals("rahasiaadmin")){
+            //login berhasil
+            new AdminController();
+            this.dispose();
+        }else{
+            //gagal login
+            JOptionPane.showMessageDialog(this,"Username atau Password Salah", "Login gagal", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonLoginActionPerformed
+
+    private void jButtonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKembaliActionPerformed
+        MainView mainView = new MainView();
+        mainView.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonKembaliActionPerformed
 
     /**
      * @param args the command line arguments
