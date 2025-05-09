@@ -4,6 +4,9 @@
  */
 package projekpbo.views;
 
+import javax.swing.JLabel;
+import projekpbo.controllers.GameController;
+
 /**
  *
  * @author Lenovo
@@ -13,8 +16,11 @@ public class PlayerView extends javax.swing.JFrame {
     /**
      * Creates new form PlayerView
      */
+    
+    private GameController controller;
     public PlayerView() {
         initComponents();
+        controller = new GameController(this);
     }
 
     /**
@@ -26,21 +32,140 @@ public class PlayerView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelJudulPlayer = new javax.swing.JLabel();
+        jLabelKata = new javax.swing.JLabel();
+        jLabelTebak = new javax.swing.JLabel();
+        jTextFieldTebak = new javax.swing.JTextField();
+        jButtonTebak = new javax.swing.JButton();
+        jLabelHuruf = new javax.swing.JLabel();
+        jLabelKesalahan = new javax.swing.JLabel();
+        jButtonMuat = new javax.swing.JButton();
+        jButtonKeluar = new javax.swing.JButton();
+        jLabelKata2 = new javax.swing.JLabel();
+        jLabelTebakan = new javax.swing.JLabel();
+        jLabelTotal = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabelJudulPlayer.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelJudulPlayer.setText("Kata Keyboard");
+
+        jLabelKata.setText("Kata:");
+
+        jLabelTebak.setText("Tebakan");
+
+        jButtonTebak.setText("Tebak");
+        jButtonTebak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTebakActionPerformed(evt);
+            }
+        });
+
+        jLabelHuruf.setText("Huruf Ditebak: ");
+
+        jLabelKesalahan.setText("Kesalahan:");
+
+        jButtonMuat.setText("Muat Ulang");
+        jButtonMuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMuatActionPerformed(evt);
+            }
+        });
+
+        jButtonKeluar.setText("Keluar");
+        jButtonKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelJudulPlayer)
+                .addGap(124, 124, 124))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelHuruf)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelTebakan))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelTebak)
+                            .addComponent(jLabelKata))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelKata2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldTebak, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jButtonTebak)))))
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jButtonMuat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelKesalahan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelTotal)))
+                .addGap(55, 55, 55))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabelJudulPlayer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelKesalahan)
+                    .addComponent(jLabelTotal))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelKata)
+                    .addComponent(jLabelKata2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTebak)
+                    .addComponent(jTextFieldTebak, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonTebak))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelHuruf)
+                    .addComponent(jLabelTebakan))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonMuat)
+                    .addComponent(jButtonKeluar))
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonTebakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTebakActionPerformed
+        String input =jTextFieldTebak.getText();
+        if(!input.isEmpty()){
+            char huruf = input.charAt(0); //ini salah
+            controller.prosesTebak(huruf);
+            jTextFieldTebak.setText("");
+        }
+    }//GEN-LAST:event_jButtonTebakActionPerformed
+
+    private void jButtonMuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMuatActionPerformed
+        controller.muatUlang();
+    }//GEN-LAST:event_jButtonMuatActionPerformed
+
+    private void jButtonKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKeluarActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButtonKeluarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,6 +202,42 @@ public class PlayerView extends javax.swing.JFrame {
         });
     }
 
+    public JLabel getjLabelKata2() {
+        return jLabelKata2;
+    }
+
+    public JLabel getjLabelTebakan() {
+        return jLabelTebakan;
+    }
+
+    public JLabel getjLabelTotal() {
+        return jLabelTotal;
+    }
+    
+    public void setKataTerbuka(String kata) {
+        jLabelKata2.setText(kata);
+    }
+
+    public void setHurufTebakan(String huruf) {
+        jLabelTebakan.setText(huruf);
+       }
+
+    public void setJumlahKesalahan(int jumlah) {
+        jLabelTotal.setText(String.valueOf(jumlah));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonKeluar;
+    private javax.swing.JButton jButtonMuat;
+    private javax.swing.JButton jButtonTebak;
+    private javax.swing.JLabel jLabelHuruf;
+    private javax.swing.JLabel jLabelJudulPlayer;
+    private javax.swing.JLabel jLabelKata;
+    private javax.swing.JLabel jLabelKata2;
+    private javax.swing.JLabel jLabelKesalahan;
+    private javax.swing.JLabel jLabelTebak;
+    private javax.swing.JLabel jLabelTebakan;
+    private javax.swing.JLabel jLabelTotal;
+    private javax.swing.JTextField jTextFieldTebak;
     // End of variables declaration//GEN-END:variables
 }

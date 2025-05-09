@@ -40,4 +40,25 @@ public class AdminController {
         modelKataModel.addRow(new Object[]{m.getId(), m.getKata()});
     });
     }
+    
+    public void tambahKata(String kata) {
+        DBhelper helper = new DBhelper();
+        if (helper.addNewKata(kata)) {
+            refreshTabel();
+        } else {
+        javax.swing.JOptionPane.showMessageDialog(v, "Gagal menambahkan kata.", "ERROR", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void editKata(int id, String kataBaru) {
+        DBhelper helper = new DBhelper();
+        if (helper.updateKata(id, kataBaru)) {
+            refreshTabel();
+        } else {
+        javax.swing.JOptionPane.showMessageDialog(v, "Gagal mengedit kata.", "ERROR", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void refresh() {
+    refreshTabel();
+    }
 }

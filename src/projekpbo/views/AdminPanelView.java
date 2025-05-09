@@ -69,10 +69,25 @@ public class AdminPanelView extends javax.swing.JFrame {
         jLabelKata.setText("Kata");
 
         jButtonEdit.setText("Edit");
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
 
         jButtonHapus.setText("Hapus");
+        jButtonHapus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonHapusActionPerformed(evt);
+            }
+        });
 
         jButtonKembali.setText("Kembali");
+        jButtonKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonKembaliActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,8 +145,59 @@ public class AdminPanelView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonTambahkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTambahkanActionPerformed
-        // TODO add your handling code here:
+        String kata = jTextFieldKata.getText().trim();
+    
+        if (!kata.isEmpty()) {
+            c.tambahKata(kata); // panggil controller untuk menambah kata
+        c.refresh(); // update isi tabel
+            jTextFieldKata.setText(""); // kosongkan input
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Kata tidak boleh kosong.");
+        }
     }//GEN-LAST:event_jButtonTambahkanActionPerformed
+
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+        int selectedRow = jTableKata.getSelectedRow();
+    
+        if (selectedRow != -1) {
+        String kataBaru = jTextFieldKata.getText().trim();
+            if (!kataBaru.isEmpty()) {
+               int id = Integer.parseInt(jTableKata.getValueAt(selectedRow, 0).toString());
+                c.editKata(id, kataBaru); // panggil controller untuk update kata
+                c.refresh(); // update isi tabel
+                jTextFieldKata.setText(""); // kosongkan input
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "Kata tidak boleh kosong.");
+            }
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Pilih data yang ingin diedit.");
+    }
+    }//GEN-LAST:event_jButtonEditActionPerformed
+
+    private void jButtonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHapusActionPerformed
+        int selectedRow = jTableKata.getSelectedRow();
+
+        if (selectedRow != -1) {
+        int konfirmasi = javax.swing.JOptionPane.showConfirmDialog(this, 
+            "Apakah Anda yakin ingin menghapus kata ini?", 
+            "Konfirmasi Hapus", 
+            javax.swing.JOptionPane.YES_NO_OPTION);
+
+        if (konfirmasi == javax.swing.JOptionPane.YES_OPTION) {
+            int id = Integer.parseInt(jTableKata.getValueAt(selectedRow, 0).toString());
+            c.hapusdata(id); // panggil controller
+            jTextFieldKata.setText(""); // kosongkan field input
+        }
+    } else {
+        javax.swing.JOptionPane.showMessageDialog(this, "Pilih kata yang ingin dihapus.");
+    }
+    }//GEN-LAST:event_jButtonHapusActionPerformed
+
+    private void jButtonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKembaliActionPerformed
+        MainView mainView = new MainView();
+        mainView.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButtonKembaliActionPerformed
 
     /**
      * @param args the command line arguments
