@@ -79,7 +79,7 @@ public class DBhelper {
         return value;
     }
     
-    
+    //update
     public boolean updateKata(int id,String kata){
         boolean value = false;
         query = "UPDATE daftar_kata SET kata = '" + kata + "' WHERE id = '" + id + "'";

@@ -149,7 +149,7 @@ public class AdminPanelView extends javax.swing.JFrame {
     
         if (!kata.isEmpty()) {
             c.tambahKata(kata); // panggil controller untuk menambah kata
-        c.refresh(); // update isi tabel
+            c.refresh(); // update isi tabel
             jTextFieldKata.setText(""); // kosongkan input
         } else {
             javax.swing.JOptionPane.showMessageDialog(this, "Kata tidak boleh kosong.");
@@ -169,28 +169,28 @@ public class AdminPanelView extends javax.swing.JFrame {
             } else {
                 javax.swing.JOptionPane.showMessageDialog(this, "Kata tidak boleh kosong.");
             }
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(this, "Pilih data yang ingin diedit.");
-    }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Pilih data yang ingin diedit.");
+        }
     }//GEN-LAST:event_jButtonEditActionPerformed
 
     private void jButtonHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonHapusActionPerformed
         int selectedRow = jTableKata.getSelectedRow();
 
         if (selectedRow != -1) {
-        int konfirmasi = javax.swing.JOptionPane.showConfirmDialog(this, 
+            int konfirmasi = javax.swing.JOptionPane.showConfirmDialog(this, 
             "Apakah Anda yakin ingin menghapus kata ini?", 
             "Konfirmasi Hapus", 
             javax.swing.JOptionPane.YES_NO_OPTION);
 
-        if (konfirmasi == javax.swing.JOptionPane.YES_OPTION) {
-            int id = Integer.parseInt(jTableKata.getValueAt(selectedRow, 0).toString());
-            c.hapusdata(id); // panggil controller
-            jTextFieldKata.setText(""); // kosongkan field input
+            if (konfirmasi == javax.swing.JOptionPane.YES_OPTION) {
+                int id = Integer.parseInt(jTableKata.getValueAt(selectedRow, 0).toString());
+                c.hapusdata(id); // panggil controller
+                jTextFieldKata.setText(""); // kosongkan field input
+            }
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Pilih kata yang ingin dihapus.");
         }
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(this, "Pilih kata yang ingin dihapus.");
-    }
     }//GEN-LAST:event_jButtonHapusActionPerformed
 
     private void jButtonKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonKembaliActionPerformed

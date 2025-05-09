@@ -142,7 +142,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelKesalahan">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Kesalahan:"/>
+        <Property name="text" type="java.lang.String" value="Kesempatan: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonMuat">

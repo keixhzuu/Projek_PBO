@@ -63,7 +63,7 @@ public class PlayerView extends javax.swing.JFrame {
 
         jLabelHuruf.setText("Huruf Ditebak: ");
 
-        jLabelKesalahan.setText("Kesalahan:");
+        jLabelKesalahan.setText("Kesempatan: ");
 
         jButtonMuat.setText("Muat Ulang");
         jButtonMuat.addActionListener(new java.awt.event.ActionListener() {
@@ -151,10 +151,9 @@ public class PlayerView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonTebakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTebakActionPerformed
-        String input =jTextFieldTebak.getText();
+        String input =jTextFieldTebak.getText().trim().toUpperCase();
         if(!input.isEmpty()){
-            char huruf = input.charAt(0); //ini salah
-            controller.prosesTebak(huruf);
+            controller.prosesTebak(input);
             jTextFieldTebak.setText("");
         }
     }//GEN-LAST:event_jButtonTebakActionPerformed
