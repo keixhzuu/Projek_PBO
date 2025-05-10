@@ -39,18 +39,28 @@ public class AdminLoginView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabelJudulLog.setFont(new java.awt.Font("Tw Cen MT", 0, 18)); // NOI18N
         jLabelJudulLog.setText("Halaman Login Admin");
 
+        jLabelUser.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabelUser.setText("Username");
 
+        jTextFieldUser.setBackground(new java.awt.Color(255, 204, 102));
+        jTextFieldUser.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
+
+        jLabelPass.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabelPass.setText("Password");
 
+        jPasswordField.setBackground(new java.awt.Color(255, 204, 102));
+        jPasswordField.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldActionPerformed(evt);
             }
         });
 
+        jButtonKembali.setBackground(new java.awt.Color(255, 153, 0));
+        jButtonKembali.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButtonKembali.setText("Kembali");
         jButtonKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +68,8 @@ public class AdminLoginView extends javax.swing.JFrame {
             }
         });
 
+        jButtonLogin.setBackground(new java.awt.Color(255, 153, 0));
+        jButtonLogin.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButtonLogin.setText("Login");
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,32 +82,33 @@ public class AdminLoginView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelUser)
-                    .addComponent(jLabelPass)
-                    .addComponent(jTextFieldUser)
-                    .addComponent(jPasswordField)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                        .addComponent(jButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelUser)
+                            .addComponent(jLabelPass)
+                            .addComponent(jTextFieldUser)
+                            .addComponent(jPasswordField)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButtonKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                                .addComponent(jButtonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabelJudulLog)))
                 .addContainerGap(47, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelJudulLog)
-                .addGap(137, 137, 137))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelJudulLog)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelPass)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -103,10 +116,11 @@ public class AdminLoginView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonKembali)
                     .addComponent(jButtonLogin))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed

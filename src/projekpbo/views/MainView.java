@@ -30,14 +30,19 @@ public class MainView extends javax.swing.JFrame {
         jLabelSub = new javax.swing.JLabel();
         jButtonPlayer = new javax.swing.JButton();
         jButtonAdmin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelJudulMain.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelJudulMain.setText("Kata Keyboard");
+        jLabelJudulMain.setFont(new java.awt.Font("Segoe UI Black", 0, 48)); // NOI18N
+        jLabelJudulMain.setForeground(new java.awt.Color(255, 153, 0));
+        jLabelJudulMain.setText("wordhunter");
 
+        jLabelSub.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jLabelSub.setText("Hari ini kamu jadi apa?");
 
+        jButtonPlayer.setBackground(new java.awt.Color(255, 204, 0));
+        jButtonPlayer.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButtonPlayer.setText("Player");
         jButtonPlayer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -45,6 +50,8 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        jButtonAdmin.setBackground(new java.awt.Color(255, 204, 51));
+        jButtonAdmin.setFont(new java.awt.Font("Tw Cen MT", 0, 14)); // NOI18N
         jButtonAdmin.setText("Admin");
         jButtonAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,38 +59,51 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\M S I\\Downloads\\download__3_-removebg-preview (2).png")); // NOI18N
+        jLabel1.setText("jLabelkucing");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(141, 141, 141)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelSub)
-                    .addComponent(jLabelJudulMain))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jButtonPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButtonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(116, 116, 116)
+                        .addComponent(jButtonPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105)
+                        .addComponent(jButtonAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(75, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelJudulMain)
+                        .addGap(117, 117, 117))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelSub)
+                        .addGap(182, 182, 182))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(14, 14, 14)
                 .addComponent(jLabelJudulMain)
-                .addGap(64, 64, 64)
+                .addGap(20, 20, 20)
                 .addComponent(jLabelSub)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonPlayer)
                     .addComponent(jButtonAdmin))
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonPlayerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayerActionPerformed
@@ -136,6 +156,7 @@ public class MainView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAdmin;
     private javax.swing.JButton jButtonPlayer;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelJudulMain;
     private javax.swing.JLabel jLabelSub;
     // End of variables declaration//GEN-END:variables
