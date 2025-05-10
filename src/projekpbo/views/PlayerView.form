@@ -50,7 +50,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="jLabelHurufBetul" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="403" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jLabelhuruf" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="348" max="-2" attributes="0"/>
                                       <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -96,9 +98,9 @@
                   <Component id="jLabelKesalahan" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabelKata" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelKata2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelKata2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -109,10 +111,9 @@
               <Component id="jButtonTebak" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="jLabelTebakan" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="51" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" min="-2" pref="152" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
@@ -127,6 +128,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabelHurufBetul" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelhuruf" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -243,12 +245,17 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\M S I\Downloads\WhatsApp_Image_2025-05-10_at_18.00.58_fd20e6a3__1_-removebg-preview.png"/>
+          <Image iconType="3" name="/projekpbo/WhatsApp_Image_2025-05-10_at_18.00.58_fd20e6a3__1_-removebg-preview.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelhuruf">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

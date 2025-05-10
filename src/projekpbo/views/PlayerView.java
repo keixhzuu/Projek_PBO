@@ -46,6 +46,7 @@ public class PlayerView extends javax.swing.JFrame {
         jLabelTotal = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabelhuruf = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,8 +101,10 @@ public class PlayerView extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\M S I\\Downloads\\WhatsApp_Image_2025-05-10_at_18.00.58_fd20e6a3__1_-removebg-preview.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projekpbo/WhatsApp_Image_2025-05-10_at_18.00.58_fd20e6a3__1_-removebg-preview.png"))); // NOI18N
         jLabel2.setText("jLabel2");
+
+        jLabelhuruf.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,7 +134,9 @@ public class PlayerView extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabelHurufBetul)
-                                        .addGap(403, 403, 403)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabelhuruf)
+                                        .addGap(348, 348, 348)
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jButtonTebak, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,7 +167,7 @@ public class PlayerView extends javax.swing.JFrame {
                     .addComponent(jLabelTotal)
                     .addComponent(jLabelKesalahan))
                 .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelKata)
                     .addComponent(jLabelKata2))
                 .addGap(38, 38, 38)
@@ -173,10 +178,9 @@ public class PlayerView extends javax.swing.JFrame {
                 .addComponent(jButtonTebak, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
                 .addComponent(jLabelTebakan)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 45, Short.MAX_VALUE)
+                        .addGap(0, 51, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -187,7 +191,8 @@ public class PlayerView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelHurufBetul)
-                            .addComponent(jLabel1))
+                            .addComponent(jLabel1)
+                            .addComponent(jLabelhuruf))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -255,7 +260,7 @@ public class PlayerView extends javax.swing.JFrame {
     }
 
     public JLabel getjLabelTebakan() {
-        return jLabelTebakan;
+        return jLabelhuruf;
     }
 
     public JLabel getjLabelTotal() {
@@ -267,7 +272,7 @@ public class PlayerView extends javax.swing.JFrame {
     }
 
     public void setHurufTebakan(String huruf) {
-        jLabelTebakan.setText(huruf);
+        jLabelhuruf.setText(huruf);
        }
 
     public void setJumlahKesalahan(int jumlah) {
@@ -288,6 +293,7 @@ public class PlayerView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelTebak;
     private javax.swing.JLabel jLabelTebakan;
     private javax.swing.JLabel jLabelTotal;
+    private javax.swing.JLabel jLabelhuruf;
     private javax.swing.JTextField jTextFieldTebak;
     // End of variables declaration//GEN-END:variables
 }

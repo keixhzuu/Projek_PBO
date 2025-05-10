@@ -59,7 +59,7 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\M S I\\Downloads\\download__3_-removebg-preview (2).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/projekpbo/download__3_-removebg-preview (2).png"))); // NOI18N
         jLabel1.setText("jLabelkucing");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
