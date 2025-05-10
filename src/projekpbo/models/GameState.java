@@ -1,69 +1,74 @@
-
 package projekpbo.models;
 
 import java.util.*;
 
 public class GameState {
     private String kataAsli;
+    private Set<String> kataDitebak;
     private Set<Character> hurufDitebak;
-    private int kesalahan;
-    private final int maxKesalahan = 5;
-    
-    public GameState(String kataAsli){
+    private int kesempatan;
+    private final int maxKesempatan = 5;
+
+    public GameState(String kataAsli) {
         this.kataAsli = kataAsli.toUpperCase();
-        this.hurufDitebak = new HashSet<>();
-        this.kesalahan= 0;
+        this.kataDitebak = new HashSet<>();
+        this.hurufDitebak = new TreeSet<>(); // Urut otomatis abjad
+        this.kesempatan = maxKesempatan;
     }
-    
-    //menambahkan huruf ditebak
-    public boolean tebakHuruf(char huruf){
-        if(hurufDitebak.contains(huruf)){
-            return false; //huruf sudah ditebak
+
+    public boolean tebakKata(String tebakan) {
+        tebakan = tebakan.toUpperCase();
+
+        if (kataDitebak.contains(tebakan)) {
+            return false;
         }
-        hurufDitebak.add(huruf);
-        if(!kataAsli.contains(String.valueOf(huruf))){
-            kesalahan++;
+
+        kataDitebak.add(tebakan);
+
+        // Tambah semua huruf dari kata ke hurufDitebak
+        for (char c : tebakan.toCharArray()) {
+            if (Character.isLetter(c)) {
+                hurufDitebak.add(c);
+            }
         }
-        
-        return true;
+
+        if (!tebakan.equals(kataAsli)) {
+            kesempatan--;
+        }
+
+        return tebakan.equals(kataAsli);
     }
-    
-    //menampilkan kata yg belum ditebak diganti "_"
-    public String getKataTersembunyi(){
+
+    public String getKataTerbukaDariHuruf() {
         StringBuilder sb = new StringBuilder();
-        for (char c : kataAsli.toCharArray()){
-            if(hurufDitebak.contains(c)){
+        for (char c : kataAsli.toCharArray()) {
+            if (hurufDitebak.contains(c)) {
                 sb.append(c).append(" ");
-            }else{
-                sb.append("_");
+            } else {
+                sb.append("_ ");
             }
         }
         return sb.toString().trim();
     }
-    
-    public boolean isMenang(){
-        for (char c : kataAsli.toCharArray()){
-            if(!hurufDitebak.contains(c)){
-                return false;
-            }
-        }
-        return true;
+
+    public boolean isMenang(String tebakan) {
+        return tebakan.equalsIgnoreCase(kataAsli);
     }
-    
+
     public boolean isKalah() {
-        return kesalahan >= maxKesalahan;
+        return kesempatan <= 0;
     }
 
-    public int getKesalahan() {
-        return kesalahan;
-    }
-
-    public int getMaxKesalahan() {
-        return maxKesalahan;
+    public int getKesempatan() {
+        return kesempatan;
     }
 
     public Set<Character> getHurufDitebak() {
         return hurufDitebak;
+    }
+
+    public Set<String> getKataDitebak() {
+        return kataDitebak;
     }
 
     public String getKataAsli() {
@@ -72,7 +77,8 @@ public class GameState {
 
     public void reset(String kataBaru) {
         this.kataAsli = kataBaru.toUpperCase();
+        this.kataDitebak.clear();
         this.hurufDitebak.clear();
-        this.kesalahan = 0;
+        this.kesempatan = maxKesempatan;
     }
 }

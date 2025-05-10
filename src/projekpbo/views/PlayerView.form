@@ -28,11 +28,25 @@
               <Component id="jLabelJudulPlayer" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <Component id="jButtonMuat" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButtonKeluar" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabelKesalahan" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabelTotal" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jLabelHuruf" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelHurufBetul" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabelTebakan" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -53,20 +67,6 @@
                   </Group>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-              <Component id="jButtonMuat" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButtonKeluar" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabelKesalahan" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabelTotal" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -93,7 +93,7 @@
               </Group>
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelHuruf" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelHurufBetul" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabelTebakan" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="63" max="32767" attributes="0"/>
@@ -135,9 +135,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTebakActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelHuruf">
+    <Component class="javax.swing.JLabel" name="jLabelHurufBetul">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Huruf Ditebak: "/>
+        <Property name="text" type="java.lang.String" value="Huruf Ditebak:  "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelKesalahan">

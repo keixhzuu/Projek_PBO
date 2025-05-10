@@ -37,7 +37,7 @@ public class PlayerView extends javax.swing.JFrame {
         jLabelTebak = new javax.swing.JLabel();
         jTextFieldTebak = new javax.swing.JTextField();
         jButtonTebak = new javax.swing.JButton();
-        jLabelHuruf = new javax.swing.JLabel();
+        jLabelHurufBetul = new javax.swing.JLabel();
         jLabelKesalahan = new javax.swing.JLabel();
         jButtonMuat = new javax.swing.JButton();
         jButtonKeluar = new javax.swing.JButton();
@@ -61,7 +61,7 @@ public class PlayerView extends javax.swing.JFrame {
             }
         });
 
-        jLabelHuruf.setText("Huruf Ditebak: ");
+        jLabelHurufBetul.setText("Huruf Ditebak:  ");
 
         jLabelKesalahan.setText("Kesempatan: ");
 
@@ -87,11 +87,22 @@ public class PlayerView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelJudulPlayer)
                 .addGap(124, 124, 124))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jButtonMuat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabelKesalahan)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelTotal)))
+                .addGap(55, 55, 55))
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelHuruf)
+                        .addComponent(jLabelHurufBetul)
                         .addGap(18, 18, 18)
                         .addComponent(jLabelTebakan))
                     .addGroup(layout.createSequentialGroup()
@@ -106,17 +117,6 @@ public class PlayerView extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addComponent(jButtonTebak)))))
                 .addContainerGap(56, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jButtonMuat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelKesalahan)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelTotal)))
-                .addGap(55, 55, 55))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +138,7 @@ public class PlayerView extends javax.swing.JFrame {
                     .addComponent(jButtonTebak))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelHuruf)
+                    .addComponent(jLabelHurufBetul)
                     .addComponent(jLabelTebakan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -229,7 +229,7 @@ public class PlayerView extends javax.swing.JFrame {
     private javax.swing.JButton jButtonKeluar;
     private javax.swing.JButton jButtonMuat;
     private javax.swing.JButton jButtonTebak;
-    private javax.swing.JLabel jLabelHuruf;
+    private javax.swing.JLabel jLabelHurufBetul;
     private javax.swing.JLabel jLabelJudulPlayer;
     private javax.swing.JLabel jLabelKata;
     private javax.swing.JLabel jLabelKata2;

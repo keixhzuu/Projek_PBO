@@ -1,110 +1,85 @@
-
 package projekpbo.controllers;
 
 import projekpbo.views.PlayerView;
 import projekpbo.helper.DBhelper;
+import projekpbo.models.KataModel;
+import projekpbo.models.GameState;
 
 import javax.swing.*;
 import java.util.*;
 
-import projekpbo.models.KataModel;
-
 public class GameController {
     private PlayerView view;
-    private String kataRahasia;
-    private StringBuilder kataTerbuka;
-    private Set<Character> hurufSudahDitebak;
-    private int kesempatan;
+    private GameState gameState;
     private boolean gameSelesai = false;
 
-    
-    public GameController(PlayerView view){
+    public GameController(PlayerView view) {
         this.view = view;
         muatUlang();
     }
-    
+
     public void muatUlang() {
-        hurufSudahDitebak = new HashSet<>();
-        kesempatan = 5;
         gameSelesai = false;
-    
+
         try {
             DBhelper db = new DBhelper();
             List<KataModel> daftarKata = db.getAllData();
 
+            String kata;
             if (!daftarKata.isEmpty()) {
                 Random rand = new Random();
                 KataModel kataTerpilih = daftarKata.get(rand.nextInt(daftarKata.size()));
-                kataRahasia = kataTerpilih.getKata().toUpperCase();
+                kata = kataTerpilih.getKata().toUpperCase();
             } else {
-                kataRahasia = "DEFAULT";
+                kata = "DEFAULT";
             }
-            kataTerbuka = new StringBuilder("_".repeat(kataRahasia.length()));
+
+            gameState = new GameState(kata);
+
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(view, "Gagal memuat kata dari database");
-            kataRahasia = "ERROR";
-            kataTerbuka = new StringBuilder("_".repeat(kataRahasia.length()));
+            gameState = new GameState("ERROR");
         }
+
         updateView();
     }
 
     public void prosesTebak(String tebakan) {
-        if (gameSelesai) return;
+        if (gameSelesai || tebakan.isEmpty()) return;
 
         tebakan = tebakan.toUpperCase();
 
-        // Tambahkan huruf ke set huruf yang ditebak
-        for (char c : tebakan.toCharArray()) {
-            hurufSudahDitebak.add(c);
-        }
-
-        // Jika tebakan tepat
-        if (tebakan.equals(kataRahasia)) {
-            kataTerbuka = new StringBuilder(kataRahasia);
-            gameSelesai = true;
-            updateView();
-            JOptionPane.showMessageDialog(view, "Selamat kamu berhasil menebak kata!");
+        if (gameState.getKataDitebak().contains(tebakan)) {
+            JOptionPane.showMessageDialog(view, "Kata sudah pernah ditebak.");
             return;
         }
 
-        // Kalau salah, tampilkan huruf yang cocok di posisi yang sama (Wordle-style)
-        kataTerbuka = new StringBuilder();
-        for (int i = 0; i < kataRahasia.length(); i++) {
-            if (i < tebakan.length() && tebakan.charAt(i) == kataRahasia.charAt(i)) {
-                kataTerbuka.append(tebakan.charAt(i));
-            } else {
-                kataTerbuka.append("_");
-            }
-        }
+        boolean benar = gameState.tebakKata(tebakan);
 
-        // Kurangi kesempatan hanya sekali per tebakan
-        kesempatan--;
-
-        if (kesempatan == 0) {
+        if (gameState.isMenang(tebakan)) {
             gameSelesai = true;
             updateView();
-            JOptionPane.showMessageDialog(view, "Kamu kalah! Kata yang benar: " + kataRahasia);
-            return;
+            JOptionPane.showMessageDialog(view, "Selamat! Kamu berhasil menebak kata!");
+        } else if (gameState.isKalah()) {
+            gameSelesai = true;
+            updateView();
+            JOptionPane.showMessageDialog(view, "Kamu kalah! Kata yang benar: " + gameState.getKataAsli());
+        } else {
+            updateView();
         }
-
-        updateView();
-    }   
-
-    private void updateView(){
-        view.setKataTerbuka(kataTerbuka.toString());
-
-        // Ubah set huruf ke string terurut
-        List<Character> hurufList = new ArrayList<>(hurufSudahDitebak);
-        Collections.sort(hurufList);  // urutkan agar rapi
-
-        StringBuilder sb = new StringBuilder();
-        for (char c : hurufList) {
-            sb.append(c).append(" ");
-        }
-        view.setHurufTebakan(sb.toString().trim());
-
-        view.setJumlahKesalahan(kesempatan);
     }
 
+    private void updateView() {
+        view.setKataTerbuka(gameState.getKataTerbukaDariHuruf());
+
+        // Menyusun huruf yang ditebak secara abjad
+        StringBuilder huruf = new StringBuilder();
+        for (char c : gameState.getHurufDitebak()) {
+            huruf.append(c).append(" ");
+        }
+
+        view.setHurufTebakan(huruf.toString().trim());
+        view.setJumlahKesalahan(gameState.getKesempatan());
+    }
 }
